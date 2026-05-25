@@ -1,0 +1,54 @@
+STUDENT ORGANIZATION SYSTEM - FIX "CAN'T DISPLAY"
+===============================================
+
+TRY THIS FIRST (easiest)
+------------------------
+1. Double-click:  start-fast.bat
+   (builds once, then runs — more stable on Windows)
+
+OR normal mode:
+1. Double-click:  start.bat
+2. Wait until Next.js window shows "Ready"
+3. Open:  http://127.0.0.1:3000
+
+BOTH black terminal windows must stay OPEN.
+
+
+IF PAGE IS BLANK OR LOADING FOREVER
+-----------------------------------
+- Use http://127.0.0.1:3000  (not only localhost)
+- Press Ctrl+Shift+R to hard refresh
+- Wait 30-60 seconds on first load (first compile is slow)
+- Check Laravel window — must show "Server running on 8000"
+- Check Next.js window — must show "Ready"
+
+
+TEST API (browser address bar)
+------------------------------
+http://127.0.0.1:8000/api/health
+
+Should show: {"status":"ok",...}
+
+
+LOGIN (password for all: password)
+---------------------------
+Click the button on the login page:
+
+  Student  → student@school.edu   (browse & join orgs)
+  Officer  → officer@school.edu   (Officer Panel in navbar)
+  Admin    → admin@school.edu     (Admin link in navbar)
+
+After login you will see a badge: Admin / Officer / Student
+
+
+MANUAL (two PowerShell windows)
+-------------------------------
+Window 1:
+  cd "c:\Users\king louie\Desktop\student organization system\backend"
+  php artisan serve
+
+Window 2:
+  cd "c:\Users\king louie\Desktop\student organization system\frontend"
+  npm run dev
+
+Then open http://127.0.0.1:3000
