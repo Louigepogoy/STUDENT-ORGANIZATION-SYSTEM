@@ -39,7 +39,7 @@ export function officerOrganizations(
 
 export function roleLabel(user: User | null): string {
     if (!user) return "";
-    if (isAdmin(user)) return "Rey Inoc";
-    if (isOfficer(user)) return "Louige Pogoy";
-    return "Jemar Lee";
+    if (isAdmin(user)) return "Admin";
+    if (isOfficer(user)) return "Officer";
+    return "Student";
 }

@@ -49,49 +49,36 @@ export default function Navbar() {
           )}
         </nav>
         <div className="flex items-center gap-3">
-          {showAuth && user ? (
-            <>
-              {role && (
-                <span
-                  className={`hidden rounded-full px-2.5 py-0.5 text-xs font-semibold sm:inline ${
-                    role === "Admin"
-                      ? "bg-indigo-100 text-indigo-800"
-                      : role === "Officer"
-                        ? "bg-amber-100 text-amber-900"
-                        : "bg-slate-100 text-slate-700"
-                  }`}
-                >
-                  {role}
-                </span>
-              )}
-              <span className="hidden text-sm text-slate-600 md:inline">
-                {user.name}
-              </span>
-              <button
-                type="button"
-                onClick={() => logout()}
-                className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm hover:bg-slate-50"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                href="/login"
-                className="rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50"
-              >
-                Login
-              </Link>
-              <Link
-                href="/register"
-                className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm text-white hover:bg-indigo-700"
-              >
-                Register
-              </Link>
-            </>
-          )}
-        </div>
+           {showAuth && user ? (
+             <>
+               <span className="hidden text-sm text-slate-600 md:inline">
+                 {roleLabel(user)} {user.name}
+               </span>
+               <button
+                 type="button"
+                 onClick={() => logout()}
+                 className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm hover:bg-slate-50"
+               >
+                 Logout
+               </button>
+             </>
+           ) : (
+             <>
+               <Link
+                 href="/login"
+                 className="rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50"
+               >
+                 Login
+               </Link>
+               <Link
+                 href="/register"
+                 className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm text-white hover:bg-indigo-700"
+               >
+                 Register
+               </Link>
+             </>
+           )}
+         </div>
       </div>
     </header>
   );
